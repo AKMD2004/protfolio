@@ -64,7 +64,7 @@ document.querySelector(`[data-filter="${filtre}"]`).classList.add('active');
 projeleriGoster();
 }
 
-// Typewriter effect
+// Yazı makinesi efekti
 function typewriterEffect() {
 const text = "Akram Mohamed Saeed — Web geliştirici ve portföy tasarımcısı.";
 const element = document.getElementById("typewriter");
@@ -79,7 +79,7 @@ function type() {
 type();
 }
 
-// Animate skill bars
+// Yetenek çubuklarını canlandır
 function yetenekAnimasyonu() {
 const bars = document.querySelectorAll(".bar div");
 bars.forEach((bar, index) => {
@@ -88,7 +88,7 @@ bars.forEach((bar, index) => {
 });
 }
 
-// Custom cursor
+// Özel imleç
 function imlecTakibi() {
 const cursor = document.createElement("div");
 cursor.classList.add("cursor");
@@ -103,7 +103,7 @@ document.addEventListener("mousedown", () => cursor.classList.add("hover"));
 document.addEventListener("mouseup", () => cursor.classList.remove("hover"));
 }
 
-// Form handling
+// Form işleme
 function formIslemi(e) {
 e.preventDefault();
 const formData = new FormData(e.target);
@@ -111,11 +111,11 @@ const data = Object.fromEntries(formData);
 
 alert(`Teşekkürler ${data.ad}. Mesajınız alındı ve en kısa sürede incelenecektir.`);
 
-// Form'u temizle
+// Formu temizle
 e.target.reset();
 }
 
-// Smooth scrolling for navigation
+// Navigasyon için yumuşak kaydırma
 function yumusakKaydirma(hedef) {
 const element = document.getElementById(hedef);
 if (element) {
@@ -128,16 +128,16 @@ window.onload = function(){
     projeleriGoster();
     typewriterEffect();
     imlecTakibi();
-    setTimeout(yetenekAnimasyonu, 1000); // Animate after page load
+    setTimeout(yetenekAnimasyonu, 1000); // Sayfa yüklendikten sonra canlandır
 
-    // Form event listener
+    // Form etkinlik dinleyicisi
     const form = document.querySelector('.contact-form');
     if (form) {
         form.addEventListener('submit', formIslemi);
     }
 };
 
-// Navigation
+// Navigasyon
 document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const section = btn.getAttribute('data-section');
@@ -145,7 +145,7 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
     });
 });
 
-// Filter buttons
+// Filtre düğmeleri
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const filter = btn.getAttribute('data-filter');
@@ -153,7 +153,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
 });
 
-// Dark Mode
+// Gece Modu
 document.getElementById("temaBtn").onclick = function() {
     document.body.classList.toggle("dark");
     document.querySelector("header").classList.toggle("dark");
@@ -161,7 +161,7 @@ document.getElementById("temaBtn").onclick = function() {
     this.innerHTML = document.body.classList.contains("dark") ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 };
 
-// Add scroll animations
+// Kaydırma animasyonları ekle
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {

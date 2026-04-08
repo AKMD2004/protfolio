@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Sıfırlama ve Temel Stiller */
 * {
     margin: 0;
     padding: 0;
@@ -19,14 +19,14 @@ body.dark {
     color: #ecf0f1;
 }
 
-/* Container */
+/* Konteyner */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header */
+/* Başlık */
 header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -99,7 +99,7 @@ header.dark #temaBtn {
     color: #ecf0f1;
 }
 
-/* Sections */
+/* Bölümler */
 .section {
     display: none;
     padding: 120px 0 60px;
@@ -115,7 +115,7 @@ header.dark #temaBtn {
     transform: translateY(0);
 }
 
-/* Hero */
+/* Kahraman */
 .hero {
     text-align: center;
     padding: 2rem 0;
@@ -152,7 +152,7 @@ body.dark #typewriter {
     margin-bottom: 2rem;
 }
 
-/* About Content */
+/* İçerik Hakkında */
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -177,7 +177,7 @@ body.dark .about-text, body.dark .about-details {
     margin-bottom: 1rem;
 }
 
-/* Education Info */
+/* Eğitim Bilgileri */
 .education-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -209,7 +209,7 @@ body.dark .info-card {
     color: #ecf0f1;
 }
 
-/* Skills */
+/* Yetenekler */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -264,7 +264,7 @@ body.dark .skill-header span:first-child {
     box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
 }
 
-/* Projects */
+/* Projeler */
 #filtreBtn {
     display: flex;
     justify-content: center;
@@ -360,7 +360,7 @@ body.dark .card {
     background: rgba(44, 62, 80, 0.9);
 }
 
-/* Contact */
+/* İletişim */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -416,7 +416,7 @@ body.dark .contact-item p, body.dark .contact-item a {
     color: #bdc3c7;
 }
 
-/* Contact Form */
+/* İletişim Formu */
 .contact-form {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
@@ -479,7 +479,7 @@ body.dark .form-group input, body.dark .form-group textarea {
     color: #ecf0f1;
 }
 
-/* Footer */
+/* Alt Bilgi */
 footer {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem 0;
@@ -507,7 +507,7 @@ footer.dark {
     color: #2980b9;
 }
 
-/* Custom Cursor */
+/* Özel İmleç */
 .cursor {
     position: fixed;
     width: 20px;
@@ -524,7 +524,7 @@ footer.dark {
     transform: scale(1.5);
 }
 
-/* Animations */
+/* Animasyonlar */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -536,7 +536,7 @@ footer.dark {
     }
 }
 
-/* Responsive */
+/* Duyarlı */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
