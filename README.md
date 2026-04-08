@@ -44,7 +44,6 @@ portfolio/
 ├── style.css           # Tüm CSS stilleri ve tasarım kuralları
 ├── script.js           # JavaScript kodu ve etkileşim mantığı
 ├── README.md           # Proje belgelendirmesi (bu dosya)
-├── LICENSE             # Proje lisansı
 ├── .gitignore          # Git sistem dosyaları
 ├── .gitattributes      # Git dosya öznitelikleri
 └── images/             # Proje görselleri ve fotoğrafları
