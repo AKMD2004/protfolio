@@ -34,20 +34,23 @@ resim:"not.jpg.jpg"
 let aktifFiltre = "hepsi";
 
 function projeleriGoster() {
-const alan = document.getElementById("projeAlani");
-alan.innerHTML = "";
+    const alan = document.getElementById("projeAlani");
+    alan.innerHTML = "";
 
-const filtrelenmisProjeler = aktifFiltre === "hepsi" ? projeler : projeler.filter(p => p.kategori === aktifFiltre);
+    const filtrelenmisProjeler = aktifFiltre === "hepsi" ? projeler : projeler.filter(p => p.kategori === aktifFiltre);
 
-filtrelenmisProjeler.forEach(p=>{
-    alan.innerHTML += `
-    <div class="card">
-        <img src="${p.resim}" alt="${p.isim}">
-        <h3>${p.isim}</h3>
-        <p>${p.aciklama}</p>
-    </div>
-    `;
-});
+    filtrelenmisProjeler.forEach(proje => {
+        alan.innerHTML += `
+        <div class="card">
+            <img src="${proje.resim}" alt="${proje.isim}">
+            <div class="card-icerik">
+                <span class="kategori">${proje.kategori}</span>
+                <h3>${proje.isim}</h3>
+                <p>${proje.aciklama}</p>
+            </div>
+        </div>
+        `;
+    });
 }
 
 function bolumDegistir(bolum) {
@@ -65,18 +68,18 @@ projeleriGoster();
 }
 
 // Yazı makinesi efekti
-function typewriterEffect() {
-const text = "Akram Mohamed Saeed — Web geliştirici ve portföy tasarımcısı.";
-const element = document.getElementById("typewriter");
-let i = 0;
-function type() {
-    if (i < text.length) {
-        element.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, 100);
+function yaziMakinesiEfekti() {
+    const yazi = "Akram Mohamed Saeed — Web geliştirici ve portföy tasarımcısı.";
+    const hedefEleman = document.getElementById("typewriter");
+    let i = 0;
+    function yaz() {
+        if (i < yazi.length) {
+            hedefEleman.innerHTML += yazi.charAt(i);
+            i++;
+            setTimeout(yaz, 100);
+        }
     }
-}
-type();
+    yaz();
 }
 
 // Yetenek çubuklarını canlandır
@@ -94,29 +97,29 @@ function imlecTakibi() {
         return; // Telefonlarda özel imleç devre dışı bırakılır
     }
 
-    const cursor = document.createElement("div");
-    cursor.classList.add("cursor");
-    document.body.appendChild(cursor);
+    const imlec = document.createElement("div");
+    imlec.classList.add("cursor");
+    document.body.appendChild(imlec);
 
     document.addEventListener("mousemove", (e) => {
-        cursor.style.left = e.clientX + "px";
-        cursor.style.top = e.clientY + "px";
+        imlec.style.left = e.clientX + "px";
+        imlec.style.top = e.clientY + "px";
     });
 
-    document.addEventListener("mousedown", () => cursor.classList.add("hover"));
-    document.addEventListener("mouseup", () => cursor.classList.remove("hover"));
+    document.addEventListener("mousedown", () => imlec.classList.add("hover"));
+    document.addEventListener("mouseup", () => imlec.classList.remove("hover"));
 }
 
 // Form işleme
 function formIslemi(e) {
-e.preventDefault();
-const formData = new FormData(e.target);
-const data = Object.fromEntries(formData);
+    e.preventDefault();
+    const formVerileri = new FormData(e.target);
+    const girdi = Object.fromEntries(formVerileri);
 
-alert(`Teşekkürler ${data.ad}. Mesajınız alındı ve en kısa sürede incelenecektir.`);
+    alert(`Teşekkürler ${girdi.ad}. Mesajınız alındı ve en kısa sürede incelenecektir.`);
 
-// Formu temizle
-e.target.reset();
+    // Formu temizle
+    e.target.reset();
 }
 
 // Navigasyon için yumuşak kaydırma
@@ -130,7 +133,7 @@ if (element) {
 window.onload = function(){
     bolumDegistir('hakkimda');
     projeleriGoster();
-    typewriterEffect();
+    yaziMakinesiEfekti();
     imlecTakibi();
     setTimeout(yetenekAnimasyonu, 1000); // Sayfa yüklendikten sonra canlandır
 
