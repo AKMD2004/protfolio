@@ -90,17 +90,21 @@ bars.forEach((bar, index) => {
 
 // Özel imleç
 function imlecTakibi() {
-const cursor = document.createElement("div");
-cursor.classList.add("cursor");
-document.body.appendChild(cursor);
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        return; // Telefonlarda özel imleç devre dışı bırakılır
+    }
 
-document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
+    const cursor = document.createElement("div");
+    cursor.classList.add("cursor");
+    document.body.appendChild(cursor);
 
-document.addEventListener("mousedown", () => cursor.classList.add("hover"));
-document.addEventListener("mouseup", () => cursor.classList.remove("hover"));
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+    });
+
+    document.addEventListener("mousedown", () => cursor.classList.add("hover"));
+    document.addEventListener("mouseup", () => cursor.classList.remove("hover"));
 }
 
 // Form işleme
