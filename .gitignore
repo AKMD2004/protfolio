@@ -24,6 +24,13 @@ build/
 *.min.js
 *.min.css
 
+# Image Files (Too large for Git)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+
 # Logs
 *.log
 npm-debug.log*
